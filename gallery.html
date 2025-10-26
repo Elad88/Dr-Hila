@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>גלריה - לפני ואחרי | דר' הילה אלפסי</title>
+    <meta name="description" content="צפו בתוצאות אמיתיות של ניתוחי חזה, מתיחת בטן ועיצוב גוף. גלריה מקצועית עם תמונות לפני ואחרי של מטופלות דר' הילה אלפסי.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #C9A96E;
+            --primary-dark: #2C2C2C;
+            --primary-light: #F5F5F5;
+            --accent-pink: #F4E4E0;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+            line-height: 1.8;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4rem;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .cta-nav {
+            background: var(--primary-gold);
+            color: var(--white) !important;
+            padding: 0.7rem 1.8rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-nav:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(201, 169, 110, 0.3);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary-dark);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .gallery-hero {
+            padding: 140px 4rem 80px;
+            background: linear-gradient(135deg, var(--accent-pink) 0%, var(--primary-light) 100%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary-gold);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 3rem 4rem;
+            background: var(--white);
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .filter-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--primary-light);
+            background: var(--white);
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-gold);
+            color: var(--white);
+            border-color: var(--primary-gold);
+        }
+
+        /* Disclaimer Banner */
+        .disclaimer-banner {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #3a3a3a 100%);
+            color: var(--white);
+            padding: 2rem 4rem;
+            text-align: center;
+        }
+
+        .disclaimer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .disclaimer-content p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Gallery Grid */
+        .gallery-section {
+            padding: 5rem 4rem;
+            background: var(--primary-light);
+        }
+
+        .gallery-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .comparison-slider {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .comparison-slider img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-after {
+            clip-path: inset(0 50% 0 0);
+            z-index: 2;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            right: 50%;
+            width: 3px;
+            height: 100%;
+            background: var(--primary-gold);
+            z-index: 3;
+            transform: translateX(50%);
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 4;
+            box-shadow: 0 4px 20px rgba(201, 169, 110, 0.4);
+        }
+
+        .slider-button::before,
+        .slider-button::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .slider-button::before {
+            right: 52%;
+            border-width: 8px 12px 8px 0;
+            border-color: transparent var(--white) transparent transparent;
+        }
+
+        .slider-button::after {
+            left: 52%;
+            border-width: 8px 0 8px 12px;
+            border-color: transparent transparent transparent var(--white);
+        }
+
+        .before-label,
+        .after-label {
+            position: absolute;
+            top: 20px;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--primary-dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 20px;
+            z-index: 2;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .before-label {
+            left: 20px;
+        }
+
+        .after-label {
+            right: 20px;
+        }
+
+        .gallery-info {
+            padding: 2rem;
+        }
+
+        .procedure-badge {
+            display: inline-block;
+            background: var(--accent-pink);
+            color: var(--primary-gold);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .case-details {
+            background: var(--primary-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .detail-value {
+            color: var(--text-light);
+        }
+
+        .case-story {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-top: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #3a3a3a 100%);
+            padding: 6rem 4rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 1rem 3rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-gold);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #b89960;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 1.5rem 2rem;
+            }
+
+            .gallery-hero {
+                padding: 120px 2rem 60px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .filter-section,
+            .gallery-section,
+            .cta-section {
+                padding: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .filter-btn {
+                font-size: 0.85rem;
+                padding: 0.6rem 1.5rem;
+            }
+
+            .comparison-slider {
+                height: 300px;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                left: 20px;
+                width: 55px;
+                height: 55px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="dr-alfasi-final-premium__1_.html" class="logo">ד"ר הילה <span>אלפסי</span></a>
+            <ul class="nav-links">
+                <li><a href="dr-alfasi-final-premium__1_.html">דף הבית</a></li>
+                <li><a href="#treatments">טיפולים</a></li>
+                <li><a href="gallery.html">גלריה</a></li>
+                <li><a href="faq.html">שאלות נפוצות</a></li>
+                <li><a href="#contact" class="cta-nav">תיאום פגישה</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gallery-hero">
+        <div class="hero-content">
+            <span class="hero-badge">✨ תוצאות אמיתיות</span>
+            <h1>גלריה - לפני ואחרי</h1>
+            <p class="hero-subtitle">
+                כל תמונה מספרת סיפור של שינוי. צפו בתוצאות אמיתיות של מטופלות שבחרו להשקיע בעצמן עם דר' הילה אלפסי.
+            </p>
+        </div>
+    </section>
+
+    <!-- Disclaimer Banner -->
+    <section class="disclaimer-banner">
+        <div class="disclaimer-content">
+            <p>
+                <strong>חשוב לדעת:</strong> התוצאות המוצגות הן אמיתיות ומבוססות על מקרים קליניים. כל אדם הוא ייחודי, והתוצאות עשויות להשתנות בהתאם למבנה הגוף, גיל, מצב בריאותי וסוג הטיפול שבוצע. הצילומים בוצעו באותם תנאי תאורה, זווית ומרחק לשם השוואה מדויקת.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">הכל</button>
+            <button class="filter-btn" data-filter="breast">ניתוחי חזה</button>
+            <button class="filter-btn" data-filter="body">עיצוב גוף</button>
+            <button class="filter-btn" data-filter="face">ניתוחי פנים</button>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <div class="gallery-grid">
+
+                <!-- Gallery Item 1: Breast Augmentation -->
+                <div class="gallery-item" data-category="breast">
+                    <div class="comparison-slider">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop" alt="לפני" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&h=600&fit=crop" alt="אחרי" class="img-after">
+                        <div class="slider-handle">
+                            <div class="slider-button"></div>
+                        </div>
+                        <span class="before-label">לפני</span>
+                        <span class="after-label">אחרי</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="procedure-badge">הגדלת חזה</span>
+                        <h3>הגדלה עם שתל 350cc</h3>
+                        <div class="case-details">
+                            <div class="detail-item">
+                                <span class="detail-label">גיל:</span>
+                                <span class="detail-value">32</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">סוג שתל:</span>
+                                <span class="detail-value">Round, High Profile 350cc</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">מיקום חתך:</span>
+                                <span class="detail-value">תוך-חזיוני (IMF)</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">זמן מהניתוח:</span>
+                                <span class="detail-value">6 חודשים</span>
+                            </div>
+                        </div>
+                        <p class="case-story">
+                            מטופלת בת 32 שחיפשה מילוי טבעי ופרופורציה מאוזנת. נבחר שתל עגול בנפח 350cc למראה מלא אך הרמוני. התוצאה: קו חזה טבעי עם פרופורציה מושלמת לגוף.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2: Breast Lift -->
+                <div class="gallery-item" data-category="breast">
+                    <div class="comparison-slider">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=600&fit=crop" alt="לפני" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=600&fit=crop" alt="אחרי" class="img-after">
+                        <div class="slider-handle">
+                            <div class="slider-button"></div>
+                        </div>
+                        <span class="before-label">לפני</span>
+                        <span class="after-label">אחרי</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="procedure-badge">הרמת חזה</span>
+                        <h3>הרמה משולבת עם הגדלה קלה</h3>
+                        <div class="case-details">
+                            <div class="detail-item">
+                                <span class="detail-label">גיל:</span>
+                                <span class="detail-value">38</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">טכניקה:</span>
+                                <span class="detail-value">Anchor Lift + Implant 280cc</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">ניתוחים קודמים:</span>
+                                <span class="detail-value">אין</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">זמן מהניתוח:</span>
+                                <span class="detail-value">8 חודשים</span>
+                            </div>
+                        </div>
+                        <p class="case-story">
+                            לאחר 2 הנקות, החזה איבד מנפחו ומיקומו. ביצענו הרמה מלאה עם שתל קטן (280cc) לשיקום נפח טבעי. התוצאה: צורה צעירה ומיקום גבוה של הפטמה.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3: Tummy Tuck -->
+                <div class="gallery-item" data-category="body">
+                    <div class="comparison-slider">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&h=600&fit=crop" alt="לפני" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800&h=600&fit=crop" alt="אחרי" class="img-after">
+                        <div class="slider-handle">
+                            <div class="slider-button"></div>
+                        </div>
+                        <span class="before-label">לפני</span>
+                        <span class="after-label">אחרי</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="procedure-badge">מתיחת בטן</span>
+                        <h3>מתיחה מלאה עם תיקון שרירים</h3>
+                        <div class="case-details">
+                            <div class="detail-item">
+                                <span class="detail-label">גיל:</span>
+                                <span class="detail-value">41</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">סוג הניתוח:</span>
+                                <span class="detail-value">Abdominoplasty + Diastasis Repair</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">סיבה:</span>
+                                <span class="detail-value">3 הריונות + עור רופף</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">זמן מהניתוח:</span>
+                                <span class="detail-value">5 חודשים</span>
+                            </div>
+                        </div>
+                        <p class="case-story">
+                            מטופלת אחרי 3 הריונות עם דיאסטזיס (הפרדת שרירים) ועור רופף. ביצענו מתיחה מלאה עם קיבוץ השרירים. התוצאה: בטן שטוחה עם קו מותן מוגדר וצורה הרמונית.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4: Liposuction -->
+                <div class="gallery-item" data-category="body">
+                    <div class="comparison-slider">
+                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&h=600&fit=crop" alt="לפני" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop" alt="אחרי" class="img-after">
+                        <div class="slider-handle">
+                            <div class="slider-button"></div>
+                        </div>
+                        <span class="before-label">לפני</span>
+                        <span class="after-label">אחרי</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="procedure-badge">שאיבת שומן</span>
+                        <h3>עיצוב 360 מעלות</h3>
+                        <div class="case-details">
+                            <div class="detail-item">
+                                <span class="detail-label">גיל:</span>
+                                <span class="detail-value">35</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">אזורים:</span>
+                                <span class="detail-value">בטן, מותניים, גב תחתון</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">נפח שומן:</span>
+                                <span class="detail-value">3.2 ליטר</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">זמן מהניתוח:</span>
+                                <span class="detail-value">4 חודשים</span>
+                            </div>
+                        </div>
+                        <p class="case-story">
+                            מטופל בעל מבנה גוף טוב אך עם שומן עיקש באזור הבטן והמותניים. ביצענו שאיבה היקפית (360°) ליצירת צללית מעוצבת. התוצאה: גוף ספורטיבי עם מותניים מוגדרים.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5: Face Lift -->
+                <div class="gallery-item" data-category="face">
+                    <div class="comparison-slider">
+                        <img src="https://images.unsplash.com/photo-1504933350103-e840ede978d4?w=800&h=600&fit=crop" alt="לפני" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&h=600&fit=crop" alt="אחרי" class="img-after">
+                        <div class="slider-handle">
+                            <div class="slider-button"></div>
+                        </div>
+                        <span class="before-label">לפני</span>
+                        <span class="after-label">אחרי</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="procedure-badge">מתיחת פנים</span>
+                        <h3>מתיחה מינימלית (Mini Facelift)</h3>
+                        <div class="case-details">
+                            <div class="detail-item">
+                                <span class="detail-label">גיל:</span>
+                                <span class="detail-value">52</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">טכניקה:</span>
+                                <span class="detail-value">SMAS Mini Lift</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">אזורים:</span>
+                                <span class="detail-value">לחיים, קו לסת, צוואר</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">זמן מהניתוח:</span>
+                                <span class="detail-value">7 חודשים</span>
+                            </div>
+                        </div>
+                        <p class="case-story">
+                            מטופלת עם ירידה קלה באזור הלחיים וקו הלסת. ביצענו מתיחה מינימלית עם התערבות בשכבת SMAS. התוצאה: מראה רענן וטבעי ללא שינוי בהבעת הפנים.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6: Eyelid Surgery -->
+                <div class="gallery-item" data-category="face">
+                    <div class="comparison-slider">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&h=600&fit=crop" alt="לפני" class="img-before">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=600&fit=crop" alt="אחרי" class="img-after">
+                        <div class="slider-handle">
+                            <div class="slider-button"></div>
+                        </div>
+                        <span class="before-label">לפני</span>
+                        <span class="after-label">אחרי</span>
+                    </div>
+                    <div class="gallery-info">
+                        <span class="procedure-badge">ניתוח עפעפיים</span>
+                        <h3>עפעפיים עליונות ותחתונות</h3>
+                        <div class="case-details">
+                            <div class="detail-item">
+                                <span class="detail-label">גיל:</span>
+                                <span class="detail-value">48</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">טכניקה:</span>
+                                <span class="detail-value">Upper + Lower Blepharoplasty</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">בעיה:</span>
+                                <span class="detail-value">עור רופף + שקיות שומן</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">זמן מהניתוח:</span>
+                                <span class="detail-value">3 חודשים</span>
+                            </div>
+                        </div>
+                        <p class="case-story">
+                            מטופל עם כבדות בעפעפיים העליונות ונפיחות בתחתונות. הסרנו עור עודף ושומן בצורה מדויקת. התוצאה: מבט צעיר ופתוח עם שמירה על המראה הטבעי.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>מוכנים לשינוי שלכם?</h2>
+            <p>
+                כל מסע מתחיל בשיחה אחת. בואו נבדוק ביחד מה מתאים לכם ונתכנן את התוצאה המושלמת עבורכם.
+            </p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn-primary">📅 תיאום פגישת ייעוץ</a>
+                <a href="https://wa.me/972733214111" class="btn-secondary">💬 שליחת הודעה בוואטסאפ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/972733214111" class="whatsapp-float" target="_blank">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M16 0C7.164 0 0 7.164 0 16C0 19.014 0.849 21.84 2.304 24.268L0.792 31L7.732 29.52C10.064 30.828 12.722 31.574 15.556 31.592H16C24.836 31.592 32 24.428 32 15.592C32 7.164 24.836 0 16 0ZM25.232 22.472C24.872 23.592 23.176 24.544 22.184 24.776C21.456 24.944 20.52 25.072 16.788 23.54C11.912 21.532 8.788 16.476 8.532 16.14C8.288 15.804 6.476 13.364 6.476 10.844C6.476 8.324 7.752 7.092 8.18 6.648C8.54 6.272 9.148 6.1 9.728 6.1C9.912 6.1 10.076 6.108 10.224 6.116C10.652 6.132 10.868 6.156 11.156 6.848C11.516 7.692 12.392 10.212 12.504 10.444C12.62 10.676 12.736 10.988 12.576 11.324C12.428 11.66 12.296 11.804 12.04 12.1C11.784 12.396 11.544 12.624 11.288 12.94C11.052 13.216 10.788 13.508 11.08 13.992C11.372 14.464 12.376 16.108 13.86 17.44C15.764 19.144 17.332 19.692 17.868 19.94C18.228 20.1 18.672 20.06 18.976 19.74C19.348 19.34 19.892 18.564 20.448 17.8C20.852 17.248 21.34 17.176 21.856 17.336C22.38 17.484 24.888 18.724 25.444 19.004C25.64 19.104 25.792 19.168 25.9 19.264C26.096 19.436 26.096 20.28 25.736 21.284C25.592 21.752 25.448 22.208 25.232 22.472Z" fill="white"/>
+        </svg>
+    </a>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryItems.forEach((item, index) => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        item.style.animation = 'none';
+                        setTimeout(() => {
+                            item.style.animation = `fadeInUp 0.6s ease ${index * 0.1}s forwards`;
+                        }, 10);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Comparison Slider functionality
+        const sliders = document.querySelectorAll('.comparison-slider');
+
+        sliders.forEach(slider => {
+            const handle = slider.querySelector('.slider-handle');
+            const afterImg = slider.querySelector('.img-after');
+            let isDragging = false;
+
+            function updateSlider(x) {
+                const rect = slider.getBoundingClientRect();
+                const pos = Math.max(0, Math.min(x - rect.left, rect.width));
+                const percentage = (pos / rect.width) * 100;
+                
+                afterImg.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+                handle.style.right = `${100 - percentage}%`;
+            }
+
+            slider.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                updateSlider(e.clientX);
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                updateSlider(e.clientX);
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDragging = false;
+            });
+
+            // Touch events for mobile
+            slider.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                updateSlider(e.touches[0].clientX);
+            });
+
+            slider.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                updateSlider(e.touches[0].clientX);
+            });
+
+            slider.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

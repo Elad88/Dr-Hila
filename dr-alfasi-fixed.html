@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דר' הילה אלפסי - כירורגיה פלסטית</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Heebo', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #fff;
+        }
+
+        /* תפריט ניווט */
+        nav {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* כפתור CTA בתפריט */
+        .nav-cta {
+            background: #d4af37;
+            color: #fff !important;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem !important;
+        }
+
+        .nav-cta:hover {
+            background: #c19a2e;
+            color: #fff !important;
+        }
+
+        /* סקשן ראשי */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        /* תמונת הרופאה - תיקון המיקום */
+        .doctor-image-container {
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #d4af37;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .doctor-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%; /* תיקון המיקום - התאם לפי הצורך */
+        }
+
+        /* סקשן סטטיסטיקות - ✅ התיקון העיקרי */
+        .stats-section {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .stats-section h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #d4af37;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: #ecf0f1;
+        }
+
+        /* סקשנים כלליים */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #555;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 800px;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-right: 4px solid #d4af37;
+        }
+
+        /* כרטיסי טיפולים - ✅ עם לינקים ישירים */
+        .treatments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .treatment-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .treatment-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .treatment-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .treatment-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #d4af37;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+
+        .treatment-link:hover {
+            background: #c19a2e;
+        }
+
+        /* המלצות */
+        .testimonials {
+            background: #f9f9f9;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        /* יצירת קשר - ✅ טלפון קליקבילי */
+        .contact-section {
+            background: #2c3e50;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            color: #d4af37;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .phone-link {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 1rem 2rem;
+            border: 2px solid #d4af37;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .phone-link:hover {
+            background: #d4af37;
+            color: #2c3e50;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #d4af37;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background: #c19a2e;
+            transform: scale(1.05);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .stats-container {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- תפריט ניווט -->
+    <nav>
+        <ul>
+            <li><a href="#about">אודות</a></li>
+            <li><a href="#stats">הניסיון שלנו</a></li>
+            <li><a href="#treatments">טיפולים</a></li>
+            <li><a href="#testimonials">המלצות</a></li>
+            <li><a href="#contact" class="nav-cta">צרו קשר</a></li>
+        </ul>
+    </nav>
+
+    <!-- סקשן ראשי -->
+    <section class="hero">
+        <h1>Excellence in Plastic Surgery</h1>
+        <p>יופי טבעי, תוצאות יוצאות דופן</p>
+        
+        <!-- תמונת הרופאה - עם תיקון המיקום -->
+        <div class="doctor-image-container">
+            <img src="doctor-image.jpg" alt="דר' הילה אלפסי" class="doctor-image">
+        </div>
+        
+        <p>במשך יותר מעשור, דר' הילה אלפסי מלווה מטופלים רבים במסע להגשמת חזון היופי האישי שלהם. בשילוב של מומחיות רפואית מתקדמת, רגישות אמנותית ומחויבות אישית לכל מטופל, אני יוצרת תוצאות טבעיות שמעצימות את הביטחון העצמי ומשנות חיים.</p>
+        
+        <a href="#contact" class="cta-button">קביעת ייעוץ ראשוני</a>
+    </section>
+
+    <!-- ✅ סקשן סטטיסטיקות - התיקון העיקרי! -->
+    <section id="stats" class="stats-section">
+        <h2>🏆 הניסיון שלנו במספרים</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">מטופלים מרוצים</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">שנות ניסיון</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">שביעות רצון</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- אודות הרופאה -->
+    <section id="about">
+        <h2>אודות הרופאה</h2>
+        <div class="quote">
+            "אני מאמינה שכירורגיה פלסטית היא אמנות של האזנה והבנה לפני הכל."
+        </div>
+        <p>במשך יותר מעשור, אני זוכה ללוות נשים וגברים רבים במסע המרגש לשיפור מראם החיצוני והפנימי. כל מטופל מגיע אליי עם סיפור ייחודי, עם חלום אישי, ועם ציפיות שחשוב לי להבין לעומק.</p>
+        <p>בהכשרתי המקיפה בבית חולים הדסה עין כרם והשתלמויותיי בחו"ל, למדתי שהטכניקה המתקדמת ביותר צריכה תמיד להיות משולבת ברגישות אנושית, בהבנה עמוקה של המטופל, ובמחויבות מוחלטת לבטיחות ולאיכות.</p>
+    </section>
+
+    <!-- ✅ הטיפולים שלנו - עם לינקים ישירים -->
+    <section id="treatments">
+        <h2>הטיפולים שלנו</h2>
+        <div class="treatments-grid">
+            
+            <!-- כרטיס הגדלת חזה - ✅ עם לינק ישיר -->
+            <div class="treatment-card">
+                <h3>🔹 ניתוחי חזה</h3>
+                <p>הגדלה, הרמה, הקטנה ותיקון אסימטריה. כל ניתוח מותאם אישית לצרכים ולמבנה הגוף.</p>
+                <a href="breast-augmentation.html" class="treatment-link">מידע מלא על הגדלת חזה ➜</a>
+            </div>
+
+            <div class="treatment-card">
+                <h3>🔹 ניתוחי פנים</h3>
+                <p>מתיחת פנים, עפעפיים, והצמדת אוזניים. שיפור תווי הפנים תוך שמירה על מראה טבעי.</p>
+                <a href="face-procedures.html" class="treatment-link">לפרטים נוספים ➜</a>
+            </div>
+
+            <div class="treatment-card">
+                <h3>🔹 ניתוחי גוף</h3>
+                <p>מתיחת בטן, שאיבת שומן ועיצוב מתאר הגוף. טכניקות מתקדמות לתוצאות מושלמות.</p>
+                <a href="body-procedures.html" class="treatment-link">לפרטים נוספים ➜</a>
+            </div>
+
+            <div class="treatment-card">
+                <h3>🔹 בוטוקס</h3>
+                <p>טיפולים אסתטיים לא פולשניים להחלקת קמטים ורענון המראה.</p>
+                <a href="botox.html" class="treatment-link">לפרטים נוספים ➜</a>
+            </div>
+
+            <div class="treatment-card">
+                <h3>🔹 חומרי מילוי</h3>
+                <p>מילוי נפח, עיצוב שפתיים והחזרת מתיחות לעור.</p>
+                <a href="fillers.html" class="treatment-link">לפרטים נוספים ➜</a>
+            </div>
+
+            <div class="treatment-card">
+                <h3>🔹 ניתוחים נוספים</h3>
+                <p>הסרת נגעים, טיפול בהזעת יתר ותיקון שסעים בתנוך.</p>
+                <a href="other-procedures.html" class="treatment-link">לפרטים נוספים ➜</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- המלצות -->
+    <section id="testimonials" class="testimonials">
+        <h2>המלצות</h2>
+        
+        <div class="testimonial">
+            <p>"דר' אלפסי היא רופאה מדהימה עם יד זהב. התוצאה עברה את כל הציפיות והיא ליוותה אותי בכל שלב. ממליצה בחום!"</p>
+            <strong>⭐⭐⭐⭐⭐</strong>
+        </div>
+
+        <div class="testimonial">
+            <p>"מקצועיות ללא פשרות. דר' אלפסי הקשיבה לי, הבינה בדיוק מה אני רוצה והתוצאה פשוט מושלמת. תודה רבה!"</p>
+            <strong>⭐⭐⭐⭐⭐</strong>
+        </div>
+
+        <div class="testimonial">
+            <p>"הרגשתי בידיים טובות מהרגע הראשון. הניתוח היה מוצלח והתהליך היה קל ונעים. אני מרגישה הכי טוב עם עצמי!"</p>
+            <strong>⭐⭐⭐⭐⭐</strong>
+        </div>
+    </section>
+
+    <!-- ✅ יצירת קשר - עם טלפון קליקבילי -->
+    <section id="contact" class="contact-section">
+        <h2>צרו קשר</h2>
+        
+        <div class="contact-info">
+            <p>📍 רחוב צור 1, מבשרת ציון<br>
+            בניין MBC, קומה 2</p>
+        </div>
+
+        <div class="contact-info">
+            <p>🕐 ראשון - חמישי: 09:00 - 17:00</p>
+        </div>
+
+        <!-- ✅ טלפון קליקבילי -->
+        <a href="tel:073-3214111" class="phone-link">📞 073-3214111</a>
+        
+        <br><br>
+        <a href="https://wa.me/9720733214111" class="cta-button">שלחו הודעה בווטסאפ</a>
+    </section>
+
+</body>
+</html>
